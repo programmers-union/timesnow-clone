@@ -1,16 +1,15 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { DM_Serif_Text } from 'next/font/google';
 import "./globals.css";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
+import Header from "./components/Header";
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+
+const dmSerif = DM_Serif_Text({
+  weight: '400', // Only one weight available
+  subsets: ['latin'],
+}); 
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -24,7 +23,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" /></head>
+      <body className={`${dmSerif.className} with100`}>
+        <Header/>
         {children}
       </body>
     </html>
