@@ -7,7 +7,7 @@ import Image from 'next/image';
 
 const Header: React.FC = () => {
   return (
-    <header className="border-bottom">
+    <header className="border-bottom  mobile-sticky bg-white   ">
       {/* Top Row */}
       <div className="d-flex justify-content-between align-items-center py-2 px-3">
         {/* Left Icons */}
@@ -24,14 +24,15 @@ const Header: React.FC = () => {
           width={300}
           height={35}
           alt='logo'
+          className='logo mx-auto d-block'
           />
-          <small className="text-uppercase text-muted" style={{ fontSize: '11px', letterSpacing: '1px' }}>
+          <small className="text-uppercase text-muted d-none d-lg-block" style={{ fontSize: '11px', letterSpacing: '1px' }}>
             Breaking News, World, Politics, Opinion
           </small>
         </div>
 
         {/* Social Icons */}
-        <div className="d-none d-lg-block align-items-center gap-3">
+        <div className="d-none d-lg-block align-items-center gap-3 ">
           <FaFacebookF size={16} />
           <FaTwitter size={16} />
           <FaInstagram size={16} />
@@ -41,7 +42,7 @@ const Header: React.FC = () => {
       </div>
 
       {/* Nav Menu */}
-      <nav className="border-top border-bottom">
+      <nav className="border-top border-bottom d-none d-lg-block  desktop-sticky ">
         <ul className="nav justify-content-center">
           <li className="nav-item">
             <a href="#" className="nav-link text-dark fw-bold">Home</a>

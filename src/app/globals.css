@@ -33,6 +33,24 @@
   width: 250px;
   height: 250px;
 }
+.logo{
+  width: 100%;
+}
+@media (max-width: 991.98px) {
+  .mobile-sticky {
+    position: -webkit-sticky; /* for Safari */
+    position: sticky;
+    top: 0;
+    z-index: 1030; /* Same as .sticky-top */
+  }
+   .desktop-sticky {
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+    z-index: 1020; /* Same as Bootstrap navbar */
+    background: #fff; /* To avoid overlap transparency */
+  }
+}
 
 @media (max-width: 768px) {
 
