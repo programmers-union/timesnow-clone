@@ -39,7 +39,7 @@ export default function BigSection({imageSrc,title,subtitle,imageAlt,category}:N
           {/* Author */}
           <div className="d-flex align-items-center">
             <Image
-              src="/images/author.jpg" // Replace with your author image path
+              src="/author1.jpg" // Replace with your author image path
               alt="Author"
               className="rounded-circle me-2"
               width={40}
