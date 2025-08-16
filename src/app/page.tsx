@@ -409,7 +409,7 @@ export default function Home() {
               title: sportsData[28].title,
               date: sportsData[28].date,
               description: sportsData[28].shortdescription,
-              imageSrc: sportsData[28].image, // or businessData[30].image if that's the right field
+              imageSrc: sportsData[28].image, 
             }}
           />
         <div className="py-2"></div>
@@ -419,7 +419,7 @@ export default function Home() {
               title: sportsData[26].title,
               date: sportsData[26].date,
               description: sportsData[26].shortdescription,
-              imageSrc: sportsData[26].image, // or businessData[30].image if that's the right field
+              imageSrc: sportsData[26].image, 
             }}
           />
           <div className="py-2"></div>
@@ -429,7 +429,7 @@ export default function Home() {
               title: sportsData[25].title,
               date: sportsData[25].date,
               description: sportsData[25].shortdescription,
-              imageSrc: sportsData[25].image, // or businessData[30].image if that's the right field
+              imageSrc: sportsData[25].image, 
             }}
           />
           <div className="py-2"></div>
@@ -439,7 +439,7 @@ export default function Home() {
               title: sportsData[24].title,
               date: sportsData[24].date,
               description: sportsData[24].shortdescription,
-              imageSrc: sportsData[24].image, // or businessData[30].image if that's the right field
+              imageSrc: sportsData[24].image, 
             }}
           />
         </div>
