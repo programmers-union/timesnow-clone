@@ -20,9 +20,11 @@ import SidebarProfile from "./components/SidebarProfile";
 import PopularNews from "./components/PopularNews";
 import Newsletter from "./components/NewsLetter";
 import FeaturedNews from "./components/FeaturedNews";
+import Header from "./components/Header";
 
 export default function Home() {
   return (
+    <><Header/>
     <div>
       <div className="row">
         <div className="col-lg-7 border-end">
@@ -445,6 +447,6 @@ export default function Home() {
         </div>
         
       </div>
-    </div>
+    </div></>
   );
 }
