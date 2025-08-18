@@ -25,7 +25,7 @@ import Header from "./components/Header";
 export default function Home() {
   return (
     <><Header/>
-    <div>
+    <div className="with100">
       <div className="row">
         <div className="col-lg-7 border-end">
           <NewsCard
@@ -447,6 +447,7 @@ export default function Home() {
         </div>
         
       </div>
-    </div></>
+    </div>
+    </>
   );
 }

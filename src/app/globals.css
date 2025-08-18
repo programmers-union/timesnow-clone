@@ -2,6 +2,10 @@
   width: 80% !important;
   margin: 0 auto;
 }
+.with1000 {
+  width: 80% ;
+  margin: 0 auto;
+}
 
 .newsimg{
   width: 800px;
@@ -52,9 +56,26 @@
   }
 }
 
+/* detail page styles */
+
+
+
+        
+        .article-content  {
+          font-size: 1.3rem;
+        }
+        
+       
+        
+      
+
 @media (max-width: 768px) {
 
     .with100 {
+      width: 100%;
+      margin: 0 auto;
+    }
+        .with1000 {
       width: 100%;
       margin: 0 auto;
     }

@@ -2,6 +2,7 @@
 import React from 'react';
 import Image from 'next/image';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Link from 'next/link';
 
 interface NewsCardaSectionProps {
   imageSrc: string;
@@ -26,7 +27,10 @@ const NewsCard: React.FC<NewsCardaSectionProps> = ({
   date
 
 }) => {
+  console.log("sluggggggggggg:",slug)
   return (
+     <Link href={`/${category.toLowerCase()}/${slug}`} className='text-decoration-none text-reset'>
+      
     <div className="container my-4">
       <div className="card border-0">
         {/* Image */}
@@ -65,6 +69,7 @@ const NewsCard: React.FC<NewsCardaSectionProps> = ({
         </div>
       </div>
     </div>
+    </Link>
   );
 };
 
