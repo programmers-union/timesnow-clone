@@ -25,7 +25,7 @@ export default function DetailComponent({
   description,
 }: ArticleSectionProps) {
   return (
-    <div className="container my-5 ">
+    <div className="container my-5  ">
       {/* Category links */}
       <div className="mb-2 ">
         <a
@@ -41,8 +41,7 @@ export default function DetailComponent({
 
       {/* Title */}
       <h2
-        className="fw-bold mb-3 mx-0 mx-lg-4
-"
+        className="fw-bold mb-3 mx-0 mx-lg-4 both-width"
       >
         {title}
       </h2>

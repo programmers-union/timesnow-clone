@@ -1,7 +1,8 @@
 .with100 {
-  width: 80% !important;
+  width: 80%;
   margin: 0 auto;
 }
+
 .nav-item.dropdown:hover .dropdown-menu {
   display: block;
 }
@@ -68,7 +69,7 @@
 
 @media (max-width: 768px) {
   .with100 {
-    width: 100%;
+    width: 95%;
     margin: 0 auto;
   }
   .with1000 {
