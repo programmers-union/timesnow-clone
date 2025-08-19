@@ -83,6 +83,7 @@ export default async function CategoryPage({ params }: PageProps) {
     default:
       break;
   }
+  
 
   if (!filteredArticles.length) {
     return (

@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import { useRouter } from "next/navigation";
 import "bootstrap/dist/css/bootstrap.min.css";
 import {
   FaFacebookF,
@@ -14,6 +15,39 @@ import Link from "next/link";
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
+  const router = useRouter();
+
+   const categories = [
+  
+  { name: "Business", slug: "/business" },
+  { name: "Politics", slug: "/politics" },
+  { name: "Technology", slug: "/technology" },
+  { name: "Science", slug: "/science" },
+  { name: "Sports", slug: "/sports" },
+  { name: "Health", slug: "/health" },
+  { name: "Entertainment", slug: "/entertainment" },
+  { name: "Lifestyle", slug: "/lifestyle" }
+];
+ const handleSearch = () => {
+    if (!searchQuery.trim()) return;
+
+    // Try to match a category
+    const match = categories.find(
+      (cat) => cat.name.toLowerCase() === searchQuery.toLowerCase()
+    );
+
+    if (match) {
+      router.push(match.slug); // Navigate to matched category
+    } else {
+      router.push(`/search?query=${encodeURIComponent(searchQuery)}`); 
+      // fallback: send to generic search results page
+    }
+
+    setIsSearchOpen(false); // Close overlay
+    setSearchQuery(""); // Reset input
+  };
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -23,9 +57,19 @@ const Header: React.FC = () => {
     setIsMenuOpen(false);
   };
 
+  const toggleSearch = () => {
+    setIsSearchOpen(!isSearchOpen);
+  };
+
+  const closeSearch = () => {
+    setIsSearchOpen(false);
+  };
+
+ 
+
   return (
     <>
-      <header className="border-bottom mobile-sticky bg-white with100 position-relative">
+      <header className="border-bottom mobile-sticky bg-white with100 ">
         {/* Top Row */}
         <div className="d-flex justify-content-between align-items-center py-2 px-3">
           {/* Left Icons */}
@@ -36,7 +80,11 @@ const Header: React.FC = () => {
               onClick={toggleMenu}
               style={{ cursor: 'pointer' }}
             />
-            <BsSearch size={18} style={{ cursor: 'pointer' }} />
+            <BsSearch 
+            size={18}
+             style={{ cursor: 'pointer' }}
+             onClick={toggleSearch}
+             />
           </div>
 
           {/* Logo */}
@@ -119,6 +167,113 @@ const Header: React.FC = () => {
           </ul>
         </nav>
       </header>
+
+        {/* Search Overlay */}
+      {isSearchOpen && (
+        <div 
+          className="position-fixed top-0 start-0 w-100 h-100 bg-white d-flex flex-column" 
+          style={{ zIndex: 1060 }}
+        >
+          {/* Search Header */}
+          <div className="d-flex justify-content-end align-items-center p-3 p-md-4">
+            <BsX 
+              size={32} 
+              style={{ cursor: 'pointer' }}
+              onClick={closeSearch}
+              className="text-dark"
+            />
+          </div>
+
+          {/* Search Content */}
+          <div className="flex-grow-1 d-flex flex-column justify-content-start align-items-center px-3 px-md-5">
+            {/* Search Input */}
+            <div className="w-100" style={{ maxWidth: '600px' }}>
+              <div className="position-relative">
+                <input
+  type="text"
+  className="form-control border-0 border-bottom rounded-0 py-3 px-0"
+  placeholder="Search For The Categories"
+  value={searchQuery}
+  onChange={(e) => setSearchQuery(e.target.value)}
+  onKeyDown={(e) => {
+    if (e.key === "Enter") {
+      handleSearch();
+    }
+  }}
+  style={{ 
+    fontSize: "1.25rem",
+    backgroundColor: "transparent",
+    boxShadow: "none",
+    borderBottomWidth: "2px",
+    borderBottomColor: "#dee2e6"
+  }}
+  autoFocus
+/>
+
+                <BsSearch 
+                  size={20} 
+                  className="position-absolute top-50 end-0 translate-middle-y text-muted"
+                  style={{ cursor: 'pointer' }}
+                />
+              </div>
+            </div>
+
+            {/* Suggestions */}
+            <div className="w-100 mt-4 mt-md-5" style={{ maxWidth: '600px' }}>
+              <h6 className="text-muted mb-3" style={{ fontSize: '0.9rem', fontWeight: '400' }}>
+                Suggestions
+              </h6>
+              
+              <div className="d-flex flex-wrap gap-3 gap-md-4">
+                <Link 
+                  href="/business" 
+                  className="text-decoration-none text-dark"
+                  onClick={closeSearch}
+                  style={{ fontSize: '1.1rem', fontWeight: '400' }}
+                >
+                  Business
+                </Link>
+                <span className="text-muted">·</span>
+                <Link 
+                  href="/politics" 
+                  className="text-decoration-none text-dark"
+                  onClick={closeSearch}
+                  style={{ fontSize: '1.1rem', fontWeight: '400' }}
+                >
+                  Politics
+                </Link>
+                <span className="text-muted">·</span>
+                <Link 
+                  href="/entertainment" 
+                  className="text-decoration-none text-dark"
+                  onClick={closeSearch}
+                  style={{ fontSize: '1.1rem', fontWeight: '400' }}
+                >
+                  Entertainment
+                </Link>
+                <span className="text-muted">·</span>
+                <Link 
+                  href="/sports" 
+                  className="text-decoration-none text-dark"
+                  onClick={closeSearch}
+                  style={{ fontSize: '1.1rem', fontWeight: '400' }}
+                >
+                  Sports
+                </Link>
+                <span className="text-muted">·</span>
+                <Link 
+                  href="/lifestyle" 
+                  className="text-decoration-none text-dark"
+                  onClick={closeSearch}
+                  style={{ fontSize: '1.1rem', fontWeight: '400' }}
+                >
+                  Lifestyle
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Overlay */}
       {isMenuOpen && (
@@ -263,6 +418,10 @@ const Header: React.FC = () => {
         }
         .nav-link:hover {
           background-color: #f8f9fa !important;
+        }
+           .form-control:focus {
+          border-color: #6c757d !important;
+          box-shadow: none !important;
         }
       `}</style>
     </>
