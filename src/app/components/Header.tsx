@@ -18,20 +18,24 @@ const Header: React.FC = () => {
       {/* Top Row */}
       <div className="d-flex justify-content-between align-items-center py-2 px-3">
         {/* Left Icons */}
-        <div className="d-flex align-items-center gap-3">
+        <div className="d-flex align-items-center gap-3`">
           <BsList size={20} />
           <BsSearch size={18} />
         </div>
 
         {/* Logo */}
         <div className="d-flex flex-column align-items-center">
+          <Link href="/">
           <Image
             src="/logo.png"
             width={300}
             height={35}
             alt="logo"
             className="logo mx-auto d-block"
+            
           />
+          </Link>
+          
           <small
             className="text-uppercase text-muted d-none d-lg-block"
             style={{ fontSize: "11px", letterSpacing: "1px" }}

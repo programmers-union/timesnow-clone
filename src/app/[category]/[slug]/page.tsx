@@ -8,6 +8,7 @@ import entertainmentData from '../../../../public/data/entertainment.json';
 import educationData from '../../../../public/data/education.json'; 
 import DetailComponent from '@/app/components/DetailComponent';
 import Header from '@/app/components/Header';
+import NewsCard2 from '@/app/components/NewsCard2';
 
 type Article = {
   category: string;
@@ -95,7 +96,7 @@ export default async function DetailPage({ params }: PageProps) {
   }
   return (
      
-    <div className=''>
+    <div className='with100'>
       <Header/>
      <DetailComponent
         title={article.title}
@@ -107,6 +108,23 @@ export default async function DetailPage({ params }: PageProps) {
         shortdescription={article.shortdescription}
         description={article.description}
      />
+     
+            {/* <div className="row border-top text-center ">
+        <p className="">Related  posts</p>
+       </div>
+       <div className="row">
+        <div className="col-lg-3">
+            <NewsCard2
+            title={healthData[30].title}
+            imageAlt={healthData[30].title}
+            subtitle={healthData[30].shortdescription}
+            imageSrc={healthData[30].image}
+            category={healthData[30].category}
+            date={healthData[30].date}
+            slug={healthData[30].slug}
+          />
+        </div>
+       </div> */}
     </div>
   )
 }
