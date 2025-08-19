@@ -9,6 +9,7 @@ import educationData from '../../../../public/data/education.json';
 import DetailComponent from '@/app/components/DetailComponent';
 import Header from '@/app/components/Header';
 import NewsCard2 from '@/app/components/NewsCard2';
+import Footer from '@/app/components/Footer';
 
 type Article = {
   category: string;
@@ -125,6 +126,8 @@ export default async function DetailPage({ params }: PageProps) {
           />
         </div>
        </div> */}
+        <Footer/>
     </div>
+   
   )
 }

@@ -1,10 +1,12 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Link from 'next/link';
 
 interface NewsCardaSectionProps {
   title: string;
   subtitle?: string;
   category: string;
+  slug:string
 
 
   
@@ -15,10 +17,12 @@ const TextNewsCard: React.FC<NewsCardaSectionProps> = ({
   title,
   subtitle,
   category,
+  slug
   
 
 }) => {
   return (
+    <Link  href={`/${category.toLowerCase()}/${slug}`} className='text-decoration-none text-reset'>
     <div className="card border-0 bg-transparent container">
       <div className="card-body px-0">
         {/* Title */}
@@ -39,6 +43,7 @@ const TextNewsCard: React.FC<NewsCardaSectionProps> = ({
         </p>
       </div>
     </div>
+    </Link>
   );
 };
 

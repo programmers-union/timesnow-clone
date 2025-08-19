@@ -1,5 +1,6 @@
 // components/ArticleCard.tsx
 import Image from "next/image";
+import Link from "next/link";
 
 interface NewsCardProps{
     imageSrc:string;
@@ -7,11 +8,14 @@ interface NewsCardProps{
     subtitle:string;
     imageAlt:string;
     category:string;
+    slug:string;
 
 }
 
-export default function ArticleCard({imageSrc,imageAlt,title,subtitle,category}:NewsCardProps) {
+export default function ArticleCard({imageSrc,imageAlt,title,subtitle,category,slug}:NewsCardProps) {
+  
   return (
+    <Link href={`/${category.toLowerCase()}/${slug}`} className='text-decoration-none text-reset'>
     <div className="container my-4">
       <div className="row g-1 align-items-start">
         
@@ -41,5 +45,6 @@ export default function ArticleCard({imageSrc,imageAlt,title,subtitle,category}:
         </div>
       </div>
     </div>
+    </Link>
   );
 }

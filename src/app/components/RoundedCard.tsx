@@ -1,15 +1,19 @@
 
 import Image from 'next/image';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Link from 'next/link';
 
 interface NewsCardProps {
   imageSrc: string;
   title: string;
   subtitle: string;
+  category:string;
+  slug:string
 }
 
-export default function RoundedCard({ imageSrc, title, subtitle }: NewsCardProps) {
+export default function RoundedCard({ imageSrc, title, subtitle,category,slug }: NewsCardProps) {
   return (
+    <Link href={`/${category.toLowerCase()}/${slug}`} className='text-decoration-none text-reset'>
     <div className="p-3">
       {/* Circular Image */}
       <div className="text-center mb-3">
@@ -32,5 +36,6 @@ export default function RoundedCard({ imageSrc, title, subtitle }: NewsCardProps
         {subtitle}
       </p>
     </div>
+    </Link>
   );
 }

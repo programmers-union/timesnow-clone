@@ -57,11 +57,13 @@ export default function Home() {
                 title={businessData[28].title}
                 category={businessData[28].category}
                 subtitle={businessData[28].shortdescription}
+                slug={businessData[28].slug}
               />
               <TextNewsCard
                 title={businessData[27].title}
                 category={businessData[27].category}
                 subtitle={businessData[27].shortdescription}
+                slug={businessData[27].slug}
               />
             </div>
           </div>
@@ -174,6 +176,8 @@ export default function Home() {
             imageSrc={entertainmentData[30].image}
             title={entertainmentData[30].title}
             subtitle={entertainmentData[30].shortdescription}
+            slug={entertainmentData[30].slug}
+            category={entertainmentData[30].slug}
           />
         </div>
         <div className="col-lg-2 border-end">
@@ -181,6 +185,8 @@ export default function Home() {
             imageSrc={entertainmentData[29].image}
             title={entertainmentData[29].title}
             subtitle={entertainmentData[29].shortdescription}
+            category={entertainmentData[29].category}
+            slug={entertainmentData[29].slug}
           />
         </div>
         <div className="col-lg-2 border-end">
@@ -188,6 +194,8 @@ export default function Home() {
             imageSrc={entertainmentData[28].image}
             title={entertainmentData[28].title}
             subtitle={entertainmentData[28].shortdescription}
+            category={entertainmentData[28].category}
+            slug={entertainmentData[28].slug}
           />
         </div>
         <div className="col-lg-2 border-end">
@@ -195,6 +203,8 @@ export default function Home() {
             imageSrc={entertainmentData[27].image}
             title={entertainmentData[27].title}
             subtitle={entertainmentData[27].shortdescription}
+            slug={entertainmentData[27].slug}
+            category={entertainmentData[27].category}
           />
         </div>
         <div className="col-lg-4">
@@ -211,6 +221,7 @@ export default function Home() {
         subtitle={educationData[29].shortdescription}
         category={educationData[29].category}
         imageAlt={educationData[29].title}
+        slug={educationData[29].slug}
       />
 
       <div className="d-flex align-items-center">
@@ -235,12 +246,14 @@ export default function Home() {
             title={scienceData[29].title}
             category={scienceData[29].category}
             subtitle={scienceData[29].shortdescription}
+            slug={scienceData[29].slug}
           />
           <div>
             <TextNewsCard
               title={scienceData[28].title}
               category={scienceData[28].category}
               subtitle={scienceData[28].shortdescription}
+              slug={scienceData[28].slug}
             />
           </div>
         </div>
@@ -320,6 +333,7 @@ export default function Home() {
               subtitle={technologyData[30].shortdescription}
               imageSrc={technologyData[30].image}
               category={technologyData[30].category}
+              slug={technologyData[30].slug}
             />
           </div>
 
@@ -330,6 +344,7 @@ export default function Home() {
               subtitle={technologyData[29].shortdescription}
               imageSrc={technologyData[29].image}
               category={technologyData[29].category}
+              slug={technologyData[29].slug}
             />
           </div>
           <div className="border-bottom">
@@ -339,6 +354,7 @@ export default function Home() {
               subtitle={lifestyleData[30].shortdescription}
               imageSrc={lifestyleData[30].image}
               category={lifestyleData[30].category}
+              slug={lifestyleData[30].slug}
             />
           </div>
           <div className="border-bottom">
@@ -348,6 +364,7 @@ export default function Home() {
               subtitle={lifestyleData[29].shortdescription}
               imageSrc={lifestyleData[29].image}
               category={lifestyleData[29].category}
+              slug={lifestyleData[29].slug}
             />
           </div>
           <div className="border-bottom">
@@ -357,6 +374,7 @@ export default function Home() {
               subtitle={sportsData[30].shortdescription}
               imageSrc={sportsData[30].image}
               category={sportsData[30].category}
+              slug={sportsData[30].slug}
             />
           </div>
           <div className="border-bottom">
@@ -366,6 +384,7 @@ export default function Home() {
               subtitle={sportsData[29].shortdescription}
               imageSrc={sportsData[29].image}
               category={sportsData[29].category}
+              slug={sportsData[29].slug}
             />
           </div>
           <ArticleCard
@@ -374,6 +393,7 @@ export default function Home() {
             subtitle={healthData[26].shortdescription}
             imageSrc={healthData[26].image}
             category={healthData[26].category}
+            slug={healthData[26].slug}
           />
         </div>
 
@@ -413,6 +433,7 @@ export default function Home() {
               date: sportsData[28].date,
               description: sportsData[28].shortdescription,
               imageSrc: sportsData[28].image, 
+              slug:sportsData[28].slug
             }}
           />
         <div className="py-2"></div>
@@ -423,6 +444,7 @@ export default function Home() {
               date: sportsData[26].date,
               description: sportsData[26].shortdescription,
               imageSrc: sportsData[26].image, 
+               slug: sportsData[26].slug, 
             }}
           />
           <div className="py-2"></div>
@@ -433,6 +455,7 @@ export default function Home() {
               date: sportsData[25].date,
               description: sportsData[25].shortdescription,
               imageSrc: sportsData[25].image, 
+              slug: sportsData[25].slug, 
             }}
           />
           <div className="py-2"></div>
@@ -443,6 +466,7 @@ export default function Home() {
               date: sportsData[24].date,
               description: sportsData[24].shortdescription,
               imageSrc: sportsData[24].image, 
+              slug: sportsData[24].slug, 
             }}
           />
         </div>

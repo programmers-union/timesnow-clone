@@ -14,6 +14,7 @@ import TextNewsCard from "../components/TextNewsCard";
 import ArticleCard from "../components/ArticleCard";
 import SidebarProfile from "../components/SidebarProfile";
 import PopularNews from "../components/PopularNews";
+import Footer from "../components/Footer";
 
 type Article = {
   category: string;
@@ -134,11 +135,13 @@ export default async function CategoryPage({ params }: PageProps) {
                 title={filteredArticles[22].title}
                 category={filteredArticles[22].category}
                 subtitle={filteredArticles[22].shortdescription}
+                slug={filteredArticles[22].slug}
               />
               <TextNewsCard
                 title={filteredArticles[23].title}
                 category={filteredArticles[23].category}
                 subtitle={filteredArticles[23].shortdescription}
+                slug={filteredArticles[23].slug}
               />
             </div>
           </div>
@@ -153,6 +156,7 @@ export default async function CategoryPage({ params }: PageProps) {
               subtitle={filteredArticles[24].shortdescription}
               imageSrc={filteredArticles[24].image}
               category={filteredArticles[24].category}
+              slug={filteredArticles[24].slug}
             />
           </div>
 
@@ -163,6 +167,7 @@ export default async function CategoryPage({ params }: PageProps) {
               subtitle={filteredArticles[25].shortdescription}
               imageSrc={filteredArticles[25].image}
               category={filteredArticles[25].category}
+              slug={filteredArticles[25].slug}
             />
           </div>
           <div className="border-bottom">
@@ -172,6 +177,7 @@ export default async function CategoryPage({ params }: PageProps) {
               subtitle={filteredArticles[26].shortdescription}
               imageSrc={filteredArticles[26].image}
               category={filteredArticles[26].category}
+              slug={filteredArticles[26].slug}
             />
           </div>
           <div className="border-bottom">
@@ -181,6 +187,7 @@ export default async function CategoryPage({ params }: PageProps) {
               subtitle={filteredArticles[27].shortdescription}
               imageSrc={filteredArticles[27].image}
               category={filteredArticles[27].category}
+              slug={filteredArticles[27].slug}
             />
           </div>
           <div className="border-bottom">
@@ -190,6 +197,7 @@ export default async function CategoryPage({ params }: PageProps) {
               subtitle={filteredArticles[28].shortdescription}
               imageSrc={filteredArticles[28].image}
               category={filteredArticles[28].category}
+              slug={filteredArticles[28].slug}
             />
           </div>
           <div className="border-bottom">
@@ -199,6 +207,7 @@ export default async function CategoryPage({ params }: PageProps) {
               subtitle={filteredArticles[29].shortdescription}
               imageSrc={filteredArticles[29].image}
               category={filteredArticles[29].category}
+              slug={filteredArticles[29].slug}
             />
           </div>
           <ArticleCard
@@ -207,6 +216,7 @@ export default async function CategoryPage({ params }: PageProps) {
             subtitle={filteredArticles[30].shortdescription}
             imageSrc={filteredArticles[30].image}
             category={filteredArticles[30].category}
+            slug={filteredArticles[30].slug}
           />
         </div>
 
@@ -219,7 +229,7 @@ export default async function CategoryPage({ params }: PageProps) {
       </div>
     </div>
       
-    
+    <Footer/>
     </>
   );
 }

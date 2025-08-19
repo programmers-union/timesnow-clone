@@ -1,5 +1,6 @@
     // components/OpinionCard.tsx
 import Image from "next/image";
+import Link from "next/link";
 
 interface NewsCardProps{
     imageSrc:string;
@@ -7,10 +8,12 @@ interface NewsCardProps{
     subtitle:string;
     imageAlt:string;
     category:string;
+    slug:string;
 }
 
-export default function BigSection({imageSrc,title,subtitle,imageAlt,category}:NewsCardProps) {
+export default function BigSection({imageSrc,title,subtitle,imageAlt,category,slug}:NewsCardProps) {
   return (
+    <Link href={`/${category.toLowerCase()}/${slug}`} className='text-decoration-none text-reset'>
     <div className="container my-5">
       <div className="row align-items-center">
         {/* Image */}
@@ -50,5 +53,6 @@ export default function BigSection({imageSrc,title,subtitle,imageAlt,category}:N
         </div>
       </div>
     </div>
+    </Link>
   );
 }

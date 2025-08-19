@@ -1,5 +1,6 @@
 import Image from "next/image";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Link from "next/link";
 interface NewsCardaSectionProps {
   imageSrc: string;
   title: string;
@@ -24,6 +25,7 @@ const OpinionCard: React.FC<NewsCardaSectionProps> = ({
 
 }) => {
   return (
+    <Link href={`/${category.toLowerCase()}/${slug}`} className='text-decoration-none text-reset'>
     <div className="container border-0">
       <Image
         src={imageSrc}
@@ -44,6 +46,7 @@ const OpinionCard: React.FC<NewsCardaSectionProps> = ({
         <p className="text-muted small mb-0">{date}</p>
       </div>
     </div>
+    </Link>
   );
 }
 

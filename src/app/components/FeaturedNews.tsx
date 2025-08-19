@@ -1,5 +1,6 @@
 // components/FeaturedNews.tsx
 import Image from "next/image";
+import Link from "next/link";
 
 interface NewsItem {
   category: string;
@@ -7,6 +8,7 @@ interface NewsItem {
   date?: string;
   description: string;
   imageSrc: string;
+  slug:string;
 }
 
 interface FeaturedNewsProps {
@@ -15,6 +17,7 @@ interface FeaturedNewsProps {
 
 export default function FeaturedNews({ item }: FeaturedNewsProps) {
   return (
+    <Link  href={`/${item.category.toLowerCase()}/${item.slug}`} className='text-decoration-none text-reset'>
     <div className="row g-3 align-items-start container">
       {/* Left side: text */}
       <div className="col-8">
@@ -55,5 +58,6 @@ export default function FeaturedNews({ item }: FeaturedNewsProps) {
         </span> */}
       </div>
     </div>
+    </Link>
   );
 }

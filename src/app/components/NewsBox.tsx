@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 interface NewsCardaSectionProps {
   imageSrc: string;
@@ -23,6 +24,7 @@ const NewsBox: React.FC<NewsCardaSectionProps> = ({
 
 }) => {
   return (
+    <Link href={`/${category.toLowerCase()}/${slug}`} className='text-decoration-none text-reset'>
     <div className="container border-0">
       {/* Image */}
       <Image
@@ -41,6 +43,7 @@ const NewsBox: React.FC<NewsCardaSectionProps> = ({
         <p className="text-muted mb-0">{date}</p>   
       </div>
     </div>
+    </Link>
   );
 }
 
