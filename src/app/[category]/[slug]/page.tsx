@@ -96,8 +96,9 @@ export default async function DetailPage({ params }: PageProps) {
     return <div className="p-4">No article found for slug: {slug}</div>;
   }
   return (
-     
+     <>
     <div className='with100'>
+      
       <Header/>
      <DetailComponent
         title={article.title}
@@ -126,8 +127,10 @@ export default async function DetailPage({ params }: PageProps) {
           />
         </div>
        </div> */}
-        <Footer/>
+      
     </div>
+      <Footer/>
+      </>
    
   )
 }

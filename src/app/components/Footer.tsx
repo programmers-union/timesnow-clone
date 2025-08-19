@@ -5,7 +5,7 @@ import { FaFacebookF, FaTwitter, FaInstagram, FaPinterestP, FaYoutube } from "re
 
 export default function Footer() {
   return (
-    <footer className="bg-black text-light py-4 with100">
+    <footer className="bg-black text-light py-4 ">
       <Container>
         <Row className="align-items-center text-center text-md-start">
           {/* Left section */}
