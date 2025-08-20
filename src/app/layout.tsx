@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { DM_Serif_Text } from 'next/font/google';
+import { PT_Serif } from "next/font/google";
 import "./globals.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -7,10 +7,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from "./components/Header";
 
 
-const dmSerif = DM_Serif_Text({
-  weight: '400', // Only one weight available
-  subsets: ['latin'],
-}); 
+const ptSerif = PT_Serif({
+  weight: ["400", "700"], // normal + bold
+  subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -25,7 +25,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" /></head>
-      <body className={`${dmSerif.className} `}>
+      <body className={`${ptSerif.className} `}>
         
         {children}
       </body>
