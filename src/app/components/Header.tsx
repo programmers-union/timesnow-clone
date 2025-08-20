@@ -30,24 +30,29 @@ const Header: React.FC = () => {
   { name: "Entertainment", slug: "/entertainment" },
   { name: "Lifestyle", slug: "/lifestyle" }
 ];
- const handleSearch = () => {
-    if (!searchQuery.trim()) return;
+const handleSearch = () => {
+  if (!searchQuery.trim()) return;
 
-    // Try to match a category
-    const match = categories.find(
-      (cat) => cat.name.toLowerCase() === searchQuery.toLowerCase()
-    );
+  const match = categories.find(
+    (cat) => cat.name.toLowerCase() === searchQuery.toLowerCase()
+  );
 
-    if (match) {
-      router.push(match.slug); // Navigate to matched category
-    } else {
-      router.push(`/search?query=${encodeURIComponent(searchQuery)}`); 
-      // fallback: send to generic search results page
-    }
+  if (match) {
+    router.push(match.slug.toLowerCase());
+    // fallback if router fails in production
+    setTimeout(() => {
+      if (window.location.pathname !== match.slug.toLowerCase()) {
+        window.location.href = match.slug.toLowerCase();
+      }
+    }, 100);
+  } else {
+    window.location.href = `/search?query=${encodeURIComponent(searchQuery)}`;
+  }
 
-    setIsSearchOpen(false); // Close overlay
-    setSearchQuery(""); // Reset input
-  };
+  setIsSearchOpen(false);
+  setSearchQuery("");
+};
+
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -402,7 +407,7 @@ const Header: React.FC = () => {
             <FaInstagram size={18} style={{ cursor: 'pointer' }} />
             <FaPinterestP size={18} style={{ cursor: 'pointer' }} />
             <FaYoutube size={18} style={{ cursor: 'pointer' }} />
-          </div>
+          </div>  
         </div>
       </div>
 
