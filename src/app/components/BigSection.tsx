@@ -29,7 +29,7 @@ export default function BigSection({imageSrc,title,subtitle,imageAlt,category,sl
 
         {/* Text Content */}
         <div className="col-md-6">
-          <p className="text-primary text-uppercase mb-2" style={{ fontSize: "0.8rem", fontWeight: 600 }}>
+          <p className="category-name text-uppercase mb-2" style={{ fontSize: "0.8rem", fontWeight: 600 }}>
             {category}
           </p>
           <h1 className="fw-bold mb-3">

@@ -14,14 +14,14 @@ interface NewsCardProps {
 export default function RoundedCard({ imageSrc, title, subtitle,category,slug }: NewsCardProps) {
   return (
     <Link href={`/${category.toLowerCase()}/${slug}`} className='text-decoration-none text-reset'>
-    <div className="p-3">
+    <div className="p-1">
       {/* Circular Image */}
       <div className="text-center mb-3">
         <Image
           src={imageSrc}
           alt={title}
-          width={150}
-          height={150}
+          width={170}
+          height={170}
           className="rounded-circle"
         />
       </div>

@@ -48,7 +48,7 @@ const NewsCard2: React.FC<NewsCardaSectionProps> = ({
         </h5>
 
         {/* Meta Info */}
-        <div className="small text-muted mb-2">
+        <div className="small nav-category mb-2">
          {date} &nbsp;•&nbsp; {category}
         </div>
 
@@ -57,7 +57,7 @@ const NewsCard2: React.FC<NewsCardaSectionProps> = ({
          {subtitle}
         </p>
       </div>
-                <a href="#" className=" text-decoration-none fs-7">
+                <a href="#" className=" small text-decoration-none text-danger fw-bold">
             READ MORE
           </a>
     </div>

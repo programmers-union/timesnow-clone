@@ -22,7 +22,7 @@ export default function FeaturedNews({ item }: FeaturedNewsProps) {
       {/* Left side: text */}
       <div className="col-8">
         {/* Category */}
-        <div className="text-uppercase small fw-bold text-primary mb-1">
+        <div className="text-uppercase small fw-bold category-name mb-1">
           {item.category}
         </div>
 

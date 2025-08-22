@@ -52,7 +52,7 @@ export default function Pagination({ currentPage, totalPages, category }: Pagina
           {currentPage > 1 ? (
             <Link 
               href={`/${category}?page=${currentPage - 1}`} 
-              className="page-link"
+              className="page-link "
               aria-label="Previous"
             >
               <span aria-hidden="true">&laquo;</span>
@@ -66,7 +66,7 @@ export default function Pagination({ currentPage, totalPages, category }: Pagina
 
         {/* Page numbers */}
         {pageNumbers.map((page, index) => (
-          <li key={index} className={`page-item ${page === currentPage ? 'active' : ''} ${page === '...' ? 'disabled' : ''}`}>
+          <li key={index} className={`page-item  ${page === currentPage ? 'active' : ''} ${page === '...' ? 'disabled' : ''}`}>
             {page === '...' ? (
               <span className="page-link">...</span>
             ) : (

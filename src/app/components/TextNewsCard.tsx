@@ -33,7 +33,7 @@ const TextNewsCard: React.FC<NewsCardaSectionProps> = ({
         </h5>
 
         {/* Category */}
-        <div className="text-muted mb-2" style={{ fontSize: '14px' }}>
+        <div className="nav-category mb-2" style={{ fontSize: '14px' }}>
           {category}
         </div>
 

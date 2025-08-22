@@ -141,7 +141,7 @@ export default async function CategoryPage({ params, searchParams }: PageProps) 
       <Header />
       <div className="with100">
         <div className="col-12 py-4 border-bottom">
-          <h1 className="text-uppercase">{category}</h1>
+          <h2 className="text-uppercase fw-bold">{category}</h2>
           <p className="mb-0">
             Labore nonumes te vel, vis id errem tantas tempor. Solet quidam
             salutatus at quo.

@@ -43,7 +43,7 @@ const OpinionCard: React.FC<NewsCardaSectionProps> = ({
         <p className="card-text text-muted">
           {subtitle}
         </p>
-        <p className="text-muted small mb-0">{date}</p>
+        <p className="text-muted small mb-0 nav-category">{date}</p>
       </div>
     </div>
     </Link>

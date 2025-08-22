@@ -49,7 +49,7 @@ const NewsCard: React.FC<NewsCardaSectionProps> = ({
           <div className="mb-2 small text-muted d-flex flex-wrap align-items-center gap-2">
             <span>{date}</span>
             <span className="mx-1">•</span>
-            <a href="#" className="text-decoration-none text-muted">{category}</a>
+            <a href="#" className="text-decoration-none nav-category">{category}</a>
             <span className="mx-1">•</span>
             <span className="text-danger fw-bold">Live</span>
             <span className="text-danger">3 years ago</span>

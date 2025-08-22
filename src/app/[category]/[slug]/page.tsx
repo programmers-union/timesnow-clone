@@ -71,7 +71,7 @@ export default async function DetailPage({ params }: PageProps) {
       break;
     case 'business':
       filteredArticles = businessData;
-      break;
+      break;  
     case 'health':
       filteredArticles = healthData;
       break;
