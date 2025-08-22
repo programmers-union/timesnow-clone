@@ -39,7 +39,7 @@ export default function ArticleCard({imageSrc,imageAlt,title,subtitle,category,s
           <p className="text-secondary subtitle mb-0">
            {subtitle}
           </p>
-          <a href="#" className=" text-decoration-none">
+          <a href="#" className=" text-decoration-none  text-danger">
             READ MORE
           </a>
         </div>

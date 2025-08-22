@@ -28,7 +28,8 @@ const Header: React.FC = () => {
   { name: "Sports", slug: "/sports" },
   { name: "Health", slug: "/health" },
   { name: "Entertainment", slug: "/entertainment" },
-  { name: "Lifestyle", slug: "/lifestyle" }
+  { name: "Lifestyle", slug: "/lifestyle" },
+  {name:"Education",slug:"/education"}
 ];
 const handleSearch = () => {
   if (!searchQuery.trim()) return;
@@ -169,6 +170,11 @@ const handleSearch = () => {
                 Lifestyle
               </Link>
             </li>
+                        {/* <li className="nav-item">
+              <Link href="/education" className="nav-link nav-category">
+                Education
+              </Link>
+            </li> */}
           </ul>
         </nav>
       </header>
