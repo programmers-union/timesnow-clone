@@ -11,11 +11,10 @@ import Header from "../components/Header";
 import NewsCard from "../components/NewsCard";
 import OpinionCard from "../components/OpinionCard";
 import TextNewsCard from "../components/TextNewsCard";
-import ArticleCard from "../components/ArticleCard";
 import SidebarProfile from "../components/SidebarProfile";
 import PopularNews from "../components/PopularNews";
 import Footer from "../components/Footer";
-import Pagination from "../components/Pagination";
+import CategoryContent from "../components/CategoryContent";
 
 type Article = {
   category: string;
@@ -31,12 +30,7 @@ interface PageProps {
   params: Promise<{
     category: string;
   }>;
-  searchParams: Promise<{
-    page?: string;
-  }>;
 }
-
-const ARTICLES_PER_PAGE = 10; // Number of ArticleCard components to show per page (change this to show more articles)
 
 // Generate static parameters for all categories
 export async function generateStaticParams() {
@@ -45,43 +39,15 @@ export async function generateStaticParams() {
     "science", "health", "entertainment", "education", "lifestyle"
   ];
   
-  const params = [];
-  
-  // Generate static params for each category and their pages
-  for (const category of categories) {
-    let categoryData: Article[] = [];
-    
-    switch (category) {
-      case "technology": categoryData = technologyData; break;
-      case "sports": categoryData = sportsData; break;
-      case "business": categoryData = businessData; break;
-      case "health": categoryData = healthData; break;
-      case "science": categoryData = scienceData; break;
-      case "politics": categoryData = politicsData; break;
-      case "entertainment": categoryData = entertainmentData; break;
-      case "education": categoryData = educationData; break;
-      case "lifestyle": categoryData = lifestyleData; break;
-    }
-    
-    // Calculate total pages for this category (use all articles except first 4 for top section)
-    const availableArticles = Math.max(0, categoryData.length - 4);
-    const totalPages = Math.ceil(availableArticles / ARTICLES_PER_PAGE);
-    
-    // Generate params for each page
-    for (let page = 1; page <= Math.max(1, totalPages); page++) {
-      params.push({ category, page: page.toString() });
-    }
-  }
-  
-  return params;
+  return categories.map(category => ({
+    category
+  }));
 }
 
-export default async function CategoryPage({ params, searchParams }: PageProps) {
+export default async function CategoryPage({ params }: PageProps) {
   const { category } = await params;
-  const { page } = await searchParams;
   
-  const currentPage = parseInt(page || '1', 10);
-  console.log("categorySlug:", category, "page:", currentPage);
+  console.log("categorySlug:", category);
 
   let filteredArticles: Article[] = [];
 
@@ -122,16 +88,6 @@ export default async function CategoryPage({ params, searchParams }: PageProps) 
       <div className="p-4">No articles found for category: {category}</div>
     );
   }
-
-  // Calculate pagination for ArticleCard components (starting from index 4 to use all data)
-  const articleCardStartIndex = 4; // Reserve first 4 articles for top section
-  const articleCardArticles = filteredArticles.slice(articleCardStartIndex);
-  const totalArticleCardPages = Math.ceil(articleCardArticles.length / ARTICLES_PER_PAGE);
-  
-  // Get articles for current page
-  const startIndex = (currentPage - 1) * ARTICLES_PER_PAGE;
-  const endIndex = startIndex + ARTICLES_PER_PAGE;
-  const currentPageArticles = articleCardArticles.slice(startIndex, endIndex);
 
   // Ensure we have articles for the top section (indices 0-3)
   const hasTopSectionArticles = filteredArticles.length > 3;
@@ -199,32 +155,11 @@ export default async function CategoryPage({ params, searchParams }: PageProps) 
         
         <div className="row">
           <div className="col-lg-8">
-            {currentPageArticles.map((article, index) => (
-              <div 
-                key={`${article.slug}-${startIndex + index}`}
-                className={index < currentPageArticles.length - 1 ? "border-bottom" : ""}
-              >
-                <ArticleCard
-                  title={article.title}
-                  imageAlt={article.title}
-                  subtitle={article.shortdescription}
-                  imageSrc={article.image}
-                  category={article.category}
-                  slug={article.slug}
-                />
-              </div>
-            ))}
-            
-            {/* Pagination Component */}
-            {totalArticleCardPages > 1 && (
-              <div className="d-flex justify-content-center mt-4">
-                <Pagination
-                  currentPage={currentPage}
-                  totalPages={totalArticleCardPages}
-                  category={category}
-                />
-              </div>
-            )}
+            {/* Client component handles pagination and searchParams */}
+            <CategoryContent
+              articles={filteredArticles.slice(4)} // Pass articles from index 4 onwards
+              category={category}
+            />
           </div>
 
           <div className="col-lg-4">
