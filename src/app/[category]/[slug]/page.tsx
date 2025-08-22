@@ -83,6 +83,7 @@ export default async function DetailPage({ params }: PageProps) {
       break;
     case'entertainment':
       filteredArticles=entertainmentData;
+      break;
     case 'education':
       filteredArticles=educationData
     default:

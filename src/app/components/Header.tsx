@@ -87,6 +87,7 @@ const handleSearch = () => {
               style={{ cursor: 'pointer' }}
             />
             <BsSearch 
+            className="d-none d-lg-flex"
             size={18}
              style={{ cursor: 'pointer' }}
              onClick={toggleSearch}
@@ -173,7 +174,7 @@ const handleSearch = () => {
                         {/* <li className="nav-item">
               <Link href="/education" className="nav-link nav-category">
                 Education
-              </Link>
+              </Link> 
             </li> */}
           </ul>
         </nav>
