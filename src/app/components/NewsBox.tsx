@@ -40,7 +40,7 @@ const NewsBox: React.FC<NewsCardaSectionProps> = ({
         <h5 className="fw-bold" >
          {title}
         </h5>
-        <p className="text-muted mb-0">{date}</p>   
+        <p className=" date-text mb-0">{date}</p>   
       </div>
     </div>
     </Link>

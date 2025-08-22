@@ -36,7 +36,7 @@ const OpinionCard: React.FC<NewsCardaSectionProps> = ({
         style={{ objectFit: "cover" }}
       />
       <div className="card-body px-0">
-        <small className="text-uppercase text-primary fw-bold">{category}</small>
+        <small className="text-uppercase fw-bold category-name">{category}</small>
         <h5 className="card-title fw-bold mt-2 mb-2">
           {title}
         </h5>

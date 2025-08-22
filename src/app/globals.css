@@ -10,7 +10,17 @@
   top: 100%;
   left: 0;
 }
-
+.category-name{
+  color: #6487a9;
+}
+.nav-category{
+  color: #777777 !important;
+  text-decoration: none;
+}
+.date-text{
+  color: #7777;
+  font-size: 0.9rem;
+}
 
 .newsimg {
   width: 800px;
