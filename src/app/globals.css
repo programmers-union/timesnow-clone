@@ -32,7 +32,7 @@
 }
 .date-text{
   color: #7777 !important;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
 }
 
 .newsimg {
@@ -57,6 +57,11 @@
 }
 .subtitle {
   font-size: 0.9rem;
+}
+.newscard-subtitle{
+  font-size: 0.9rem;
+  color: #777777 !important;
+  text-decoration: none;
 }
 .article-title {
   font-size: 1.4rem;

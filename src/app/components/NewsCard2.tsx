@@ -48,7 +48,7 @@ const NewsCard2: React.FC<NewsCardaSectionProps> = ({
         </h5>
 
         {/* Meta Info */}
-        <div className="small nav-category mb-2">
+        <div className="small date-text text-capitalize mb-2">
          {date} &nbsp;•&nbsp; {category}
         </div>
 

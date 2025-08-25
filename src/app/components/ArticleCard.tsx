@@ -33,7 +33,7 @@ export default function ArticleCard({imageSrc,imageAlt,title,subtitle,category,s
         {/* Content */}
         <div className="col-12 col-md-8 ps-0 g-0 ">
           <h3 className="fw-bold mb-1 article-title">{title}</h3>
-          <div className="nav-category small mb-2">
+          <div className="date-text small mb-2">
            24th August<span className="mx-2">•</span>{category}
           </div>
           <p className="text-secondary subtitle mb-0">

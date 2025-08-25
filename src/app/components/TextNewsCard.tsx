@@ -1,12 +1,14 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Link from 'next/link';
+import Image from 'next/image';
 
 interface NewsCardaSectionProps {
   title: string;
-  subtitle?: string;
+  subtitle: string;
   category: string;
-  slug:string
+  slug:string;
+  date?:string;
 
 
   
@@ -17,7 +19,8 @@ const TextNewsCard: React.FC<NewsCardaSectionProps> = ({
   title,
   subtitle,
   category,
-  slug
+  slug,
+  date
   
 
 }) => {
@@ -36,9 +39,26 @@ const TextNewsCard: React.FC<NewsCardaSectionProps> = ({
  <small className="text-uppercase fw-bold category-name">{category}</small>
 
         {/* Excerpt */}
-        <p className="text-muted mb-0 py-2" style={{ fontSize: '14px' }}>
-         {subtitle}
+        <p className="newscard-subtitle mb-0 py-2">
+         {subtitle.length > 70
+                  ?subtitle.slice(0, 100) + "..."
+                  : subtitle}
         </p>
+        <p className="small mb-0 text-muted">
+            {<span className="date-text">{date}</span>}
+            
+                             <div className="d-flex align-items-center">
+                               <Image
+                                 src="/author1.jpg" // Replace with your author image path
+                                 alt="Author"
+                                 className="rounded-circle me-2"
+                                 width={30}
+                                 height={30}
+                               />
+                               <small className="text-muted">by Neil MacLeod</small>
+                             </div>
+          
+          </p>
       </div>
     </div>
     </Link>

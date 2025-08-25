@@ -58,12 +58,14 @@ export default function Home() {
                 category={businessData[28].category}
                 subtitle={businessData[28].shortdescription}
                 slug={businessData[28].slug}
+                date={businessData[28].date}
               />
               <TextNewsCard
                 title={businessData[27].title}
                 category={businessData[27].category}
                 subtitle={businessData[27].shortdescription}
                 slug={businessData[27].slug}
+                date={businessData[27].date}
               />
             </div>
           </div>
@@ -472,6 +474,9 @@ export default function Home() {
         </div>
         
       </div>
+    </div>
+    <div className="py-2">
+      
     </div>
     <Footer/>
     </>

@@ -40,10 +40,29 @@ const OpinionCard: React.FC<NewsCardaSectionProps> = ({
         <h5 className="card-title fw-bold mt-2 mb-2">
           {title}
         </h5>
-        <p className="card-text text-muted">
+        <p className="card-text newscard-subtitle">
           {subtitle}
         </p>
-        <p className=" small mb-0 date-text">{date}</p>
+         
+       <p className="small mb-0 text-muted">
+            {date && <span className="date-text">{date}</span>}
+            
+              <>
+                
+                                          <div className="d-flex align-items-center">
+                                            <Image
+                                              src="/author1.jpg" // Replace with your author image path
+                                              alt="Author"
+                                              className="rounded-circle me-2"
+                                              width={30}
+                                              height={30}
+                                            />
+                                            <small className="text-muted">by Neil MacLeod</small>
+                                          </div>
+              </>
+            
+          </p>
+        
       </div>
     </div>
     </Link>

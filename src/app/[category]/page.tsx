@@ -44,6 +44,28 @@ export async function generateStaticParams() {
   }));
 }
 
+
+const categoryDescriptions: Record<string, string> = {
+  business:
+    "Stay updated with market trends, finance, startups, and strategies shaping today’s global business world.",
+  technology:
+    "Discover innovations, AI, gadgets, and digital trends transforming industries and everyday life.",
+  health:
+    "Explore wellness, fitness, nutrition, and medical research for a healthier, balanced lifestyle.",
+  sports:
+    "Catch game results, player updates, and inspiring stories driving the world of sports.",
+  science:
+    "Explore discoveries, space, environment, and research expanding human knowledge.",
+  politics:
+    "Stay informed on government policies, elections, and global political developments.",
+  entertainment:
+    "Movies, music, TV, celebrity news, and pop culture trends that captivate audiences worldwide.",
+  education:
+    "Insights, trends, and stories shaping learning, teaching, and the future of education.",
+  lifestyle:
+    "Discover fashion, travel, food, and culture trends inspiring modern living and creativity.",
+};
+
 export default async function CategoryPage({ params }: PageProps) {
   const { category } = await params;
   
@@ -99,12 +121,7 @@ export default async function CategoryPage({ params }: PageProps) {
         <div className="col-12 py-4 border-bottom">
           <h2 className="text-uppercase fw-bold">{category}</h2>
           <p className="mb-0">
-            Labore nonumes te vel, vis id errem tantas tempor. Solet quidam
-            salutatus at quo.
-          </p>
-          <p>
-            Tantas comprehensam te sea, usu sanctus similique ei. Viderer admodum
-            mea et, probo tantas alienum ne vim.
+ {categoryDescriptions[category] || "Explore the latest updates and stories."}
           </p>
         </div>
         

@@ -8,9 +8,7 @@ interface NewsCardaSectionProps {
   imageAlt: string;
   category: string;
   slug: string;
-  date?:string;
-
-  
+  date?: string;
 }
 
 const NewsBox: React.FC<NewsCardaSectionProps> = ({
@@ -20,31 +18,45 @@ const NewsBox: React.FC<NewsCardaSectionProps> = ({
   imageAlt,
   category,
   slug,
-  date
-
+  date,
 }) => {
   return (
-    <Link href={`/${category.toLowerCase()}/${slug}`} className='text-decoration-none text-reset'>
-    <div className="container border-0">
-      {/* Image */}
-      <Image
-        src={imageSrc}
-        alt={imageAlt}
-        width={400}
-        height={400}
-        className="card-img-top boxImg"
-      />
+    <Link
+      href={`/${category.toLowerCase()}/${slug}`}
+      className="text-decoration-none text-reset"
+    >
+      <div className="container border-0">
+        {/* Image */}
+        <Image
+          src={imageSrc}
+          alt={imageAlt}
+          width={400}
+          height={400}
+          className="card-img-top boxImg"
+        />
 
-      {/* Card Body */}
-      <div className="card-body px-0 py-2">
-        <h5 className="fw-bold" >
-         {title}
-        </h5>
-        <p className=" date-text mb-0">{date}</p>   
+        {/* Card Body */}
+        <div className="card-body px-0 py-2">
+          <h5 className="fw-bold">{title}</h5>
+          {/* Date + Author (inline) */}
+          <div className="d-flex align-items-center small text-muted mt-1">
+            {date && <span className="me-2 date-text">{date}</span>}
+
+            <div className="d-flex align-items-center">
+              <Image
+                src="/author1.jpg"
+                alt="aurthor"
+                className="rounded-circle me-2"
+                width={24}
+                height={24}
+              />
+              <small className="text-muted">by Neil MacLeod</small>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
     </Link>
   );
-}
+};
 
 export default NewsBox;

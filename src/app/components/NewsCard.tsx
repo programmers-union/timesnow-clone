@@ -49,19 +49,27 @@ const NewsCard: React.FC<NewsCardaSectionProps> = ({
           <div className="mb-2 small text-muted d-flex flex-wrap align-items-center gap-2">
             <span className='date-text'>{date}</span>
             {/* <span className="mx-1">•</span> */}
-            <a href="#" className="text-decoration-none date-text text-capitalize">{category}</a>
-            {/* <span className="mx-1">•</span> */}
-            {/* <span className="text-danger fw-bold ">Live</span>
-            <span className="text-danger">3 years ago</span> */}
+            <a href="#" className="text-decoration-none fw-bold category-name text-uppercase ">{category}</a>
+            <span className="mx-1">•</span>
+                           <div className="d-flex align-items-center">
+                             <Image
+                               src="/author1.jpg" // Replace with your author image path
+                               alt="Author"
+                               className="rounded-circle me-2"
+                               width={30}
+                               height={30}
+                             />
+                             <small className="text-muted">by Neil MacLeod</small>
+                           </div>
           </div>
 
           {/* Title */}
-          <h4 className="fw-bold mb-2">
+          <h4 className="fw-bold mb-2 py-3">
            <span className="text-dark text-decoration-none">{title}</span> 
           </h4>
 
           {/* Description */}
-          <p className="text-muted mb-0">
+          <p className="newscard-subtitle mb-0">
            {subtitle}
           </p>
         </div>

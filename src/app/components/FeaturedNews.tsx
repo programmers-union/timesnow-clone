@@ -32,7 +32,7 @@ export default function FeaturedNews({ item }: FeaturedNewsProps) {
                 : item.title}</h5>
 
         {/* Date */}
-        <div className="text-muted small mb-2">{item.date}</div>
+        <div className=" date-text mb-2">{item.date}</div>
 
         {/* Description */}
         <p className="mb-0 text-muted small">{item.description.length > 70

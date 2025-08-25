@@ -23,8 +23,8 @@ export default function Footer() {
           </Col>
 
           {/* Middle section */}
-          <Col md={4} className="mb-3 mb-md-0 border-start border-end">
-            <ul className="list-unstyled mb-0 text-center">
+          <Col md={4} className="mb-3 mb-md-0 border-start  border-end">
+            <ul className="list-unstyled mb-0">
               <li><Link href="#" className="text-light text-decoration-none">About</Link></li>
               <li><Link href="#" className="text-light text-decoration-none">Privacy</Link></li>
               <li><Link href="#" className="text-light text-decoration-none">Terms</Link></li>
