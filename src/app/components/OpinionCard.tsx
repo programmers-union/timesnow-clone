@@ -35,7 +35,7 @@ const OpinionCard: React.FC<NewsCardaSectionProps> = ({
         className="card-img-top newsimg2"
         style={{ objectFit: "cover" }}
       />
-      <div className="card-body px-0">
+      <div className="card-body px-0 py-2">
         <small className="text-uppercase fw-bold category-name">{category}</small>
         <h5 className="card-title fw-bold mt-2 mb-2">
           {title}
@@ -43,7 +43,7 @@ const OpinionCard: React.FC<NewsCardaSectionProps> = ({
         <p className="card-text text-muted">
           {subtitle}
         </p>
-        <p className="text-muted small mb-0 nav-category">{date}</p>
+        <p className=" small mb-0 date-text">{date}</p>
       </div>
     </div>
     </Link>

@@ -18,7 +18,7 @@ export default function Footer() {
               <a href="#" className="text-light"><FaYoutube /></a>
             </div>
             <p className="mb-0 small">
-              © 2020 - All Rights Reserved. Designed by The Fox Mag
+              © 2020 - All Rights Reserved.
             </p>
           </Col>
 
@@ -35,10 +35,10 @@ export default function Footer() {
           {/* Right section */}
           <Col md={4}>
             <ul className="list-unstyled mb-0 text-center text-md-start">
-              <li><Link href="#" className="text-light text-decoration-none">Site Guide</Link></li>
-              <li><Link href="#" className="text-light text-decoration-none">Help</Link></li>
-              <li><Link href="#" className="text-light text-decoration-none">Jobs</Link></li>
-              <li><Link href="#" className="text-light text-decoration-none">Advertise</Link></li>
+              <li><Link href="#" className="text-light text-decoration-none">Business</Link></li>
+              <li><Link href="#" className="text-light text-decoration-none">Politics</Link></li>
+              <li><Link href="#" className="text-light text-decoration-none">Technology</Link></li>
+              <li><Link href="#" className="text-light text-decoration-none">Science</Link></li>
             </ul>
           </Col>
         </Row>

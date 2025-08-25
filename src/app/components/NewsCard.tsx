@@ -47,19 +47,17 @@ const NewsCard: React.FC<NewsCardaSectionProps> = ({
         <div className="card-body px-0">
           {/* Meta Info */}
           <div className="mb-2 small text-muted d-flex flex-wrap align-items-center gap-2">
-            <span>{date}</span>
-            <span className="mx-1">•</span>
-            <a href="#" className="text-decoration-none nav-category">{category}</a>
-            <span className="mx-1">•</span>
-            <span className="text-danger fw-bold">Live</span>
-            <span className="text-danger">3 years ago</span>
+            <span className='date-text'>{date}</span>
+            {/* <span className="mx-1">•</span> */}
+            <a href="#" className="text-decoration-none date-text text-capitalize">{category}</a>
+            {/* <span className="mx-1">•</span> */}
+            {/* <span className="text-danger fw-bold ">Live</span>
+            <span className="text-danger">3 years ago</span> */}
           </div>
 
           {/* Title */}
           <h4 className="fw-bold mb-2">
-            <a href="#" className="text-dark text-decoration-none">
-              {title}
-            </a>
+           <span className="text-dark text-decoration-none">{title}</span> 
           </h4>
 
           {/* Description */}

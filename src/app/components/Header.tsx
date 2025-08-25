@@ -10,7 +10,7 @@ import {
   FaYoutube,
 } from "react-icons/fa";
 import { BsList, BsSearch, BsX } from "react-icons/bs";
-import Image from "next/image";
+import Image from "next/image"; 
 import Link from "next/link";
 
 const Header: React.FC = () => {
@@ -98,9 +98,9 @@ const handleSearch = () => {
           <div className="d-flex flex-column align-items-center">
             <Link href="/">
               <Image
-                src="/logo.png"
+                src="/logo.webp"
                 width={300}
-                height={35}
+                height={60}
                 alt="logo"
                 className="logo mx-auto d-block"
               />
@@ -124,60 +124,60 @@ const handleSearch = () => {
         </div>
 
         {/* Desktop Nav Menu */}
-        <nav className="border-top border-bottom d-none d-lg-block desktop-sticky">
-          <ul className="nav justify-content-center">
-            <li className="nav-item">
-              <Link href="/" className="nav-link nav-category">
-                Home
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link href="/business" className="nav-link nav-category">
-                Business
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link href="/politics" className="nav-link nav-category">
-                Politics
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link href="/technology" className="nav-link nav-category">
-                Technology
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link href="/science" className="nav-link nav-category">
-                Science
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link href="/health" className="nav-link nav-category">
-                Health
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link href="/sports" className="nav-link nav-category">
-                Sports
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link href="/entertainment" className="nav-link nav-category">
-                Entertainment
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link href="/lifestyle" className="nav-link nav-category">
-                Lifestyle
-              </Link>
-            </li>
-                        {/* <li className="nav-item">
-              <Link href="/education" className="nav-link nav-category">
-                Education
-              </Link> 
-            </li> */}
-          </ul>
-        </nav>
+          <nav className="border-top border-bottom d-none d-lg-block desktop-sticky">
+            <ul className="nav justify-content-center">
+              <li className="nav-item">
+                <Link href="/" className="nav-link nav-category">
+                  Home
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link href="/business" className="nav-link nav-category">
+                  Business
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link href="/politics" className="nav-link nav-category">
+                  Politics
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link href="/technology" className="nav-link nav-category">
+                  Technology
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link href="/science" className="nav-link nav-category">
+                  Science
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link href="/health" className="nav-link nav-category">
+                  Health
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link href="/sports" className="nav-link nav-category">
+                  Sports
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link href="/entertainment" className="nav-link nav-category">
+                  Entertainment
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link href="/lifestyle" className="nav-link nav-category">
+                  Lifestyle
+                </Link>
+              </li>
+                          {/* <li className="nav-item">
+                <Link href="/education" className="nav-link nav-category">
+                  Education
+                </Link> 
+              </li> */}
+            </ul>
+          </nav>
       </header>
 
         {/* Search Overlay */}
@@ -441,3 +441,4 @@ const handleSearch = () => {
 };
 
 export default Header;
+
