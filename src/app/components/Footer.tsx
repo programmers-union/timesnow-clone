@@ -18,17 +18,17 @@ export default function Footer() {
               <a href="#" className="text-light"><FaYoutube /></a>
             </div>
             <p className="mb-0 small">
-              © 2020 - All Rights Reserved.
+              © 2025 - All Rights Reserved.
             </p>
           </Col>
 
           {/* Middle section */}
           <Col md={4} className="mb-3 mb-md-0 border-start  border-end">
             <ul className="list-unstyled mb-0">
-              <li><Link href="#" className="text-light text-decoration-none">About</Link></li>
-              <li><Link href="#" className="text-light text-decoration-none">Privacy</Link></li>
-              <li><Link href="#" className="text-light text-decoration-none">Terms</Link></li>
-              <li><Link href="#" className="text-light text-decoration-none">Contact</Link></li>
+              <li><Link href="/team" className="text-light text-decoration-none">Team</Link></li>
+              <li><Link href="/about" className="text-light text-decoration-none">About</Link></li>
+              <li><Link href="/editorial-policy" className="text-light text-decoration-none">Editorial Policy</Link></li>
+              <li><Link href="/contact" className="text-light text-decoration-none">Contact</Link></li>
             </ul>
           </Col>
 
