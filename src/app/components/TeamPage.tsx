@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 
 const TeamPage = () => {
@@ -7,42 +8,48 @@ const TeamPage = () => {
       title: "Editor",
       bio: "Helen runs the newsroom and keeps everything on track. She reads every story, checks the facts, and makes sure what we publish is clear and fair. With more than ten years in journalism, she has seen almost everything, and she knows how to make a story resonate without losing accuracy.",
       interests: "When she's not editing, Helen enjoys hiking local trails, reading history, and scribbling essays about topics that interest her.",
-      initials: "HL"
+      initials: "HL",
+      slug:"/helen-e-lynch"
     },
     {
       name: "Melissa T. Daniel",
       title: "Journalist",
       bio: "Melissa writes for all kinds of stories, bringing curiosity and persistence to everything she touches. She digs into leads, talks to people on the ground, and turns complicated information into stories readers can understand.",
       interests: "Outside the newsroom, Melissa can often be found exploring markets, sketching, or chatting with neighbors about what matters most in their community.",
-      initials: "MD"
+      initials: "MD",
+      slug:"/melissa-t-daniel"
     },
     {
       name: "Patricia T. Winter",
       title: "Reporter",
       bio: "Patricia contributes to every kind of news story. She has a talent for making complex topics understandable and for asking questions that get to the heart of a story.",
       interests: "When she's not reporting, Patricia enjoys a strong cup of coffee, running in the mornings, and listening to podcasts about entrepreneurship, ideas, and innovation.",
-      initials: "PW"
+      initials: "PW",
+      slug:"/patricia-t-winter"
     },
     {
       name: "Justin M. Franklin",
       title: "Correspondent",
       bio: "Justin writes across all types of news. He's endlessly curious and likes to explore topics in a way that readers can relate to and understand.",
       interests: "When he isn't working, Justin enjoys street photography, playing chess, and experimenting with new software tools just for fun.",
-      initials: "JF"
+      initials: "JF",
+      slug:"/justin-m-franklin"
     },
     {
       name: "James D. Wade",
       title: "Investigative Reporter",
       bio: "James works on stories in every area of news. He follows leads, asks the hard questions, and digs into the details to make sure readers get the full story.",
       interests: "Outside the newsroom, James enjoys watching history documentaries, taking quiet walks, and sitting in coffee shops to read or brainstorm ideas.",
-      initials: "JW"
+      initials: "JW",
+      slug:"/james-d-wade"
     },
     {
       name: "NewsFlashPro Staff",
       title: "Contributing Writers",
       bio: "Some stories are the result of teamwork among our reporters or contributions from trusted external writers. In those cases, the byline is NewsFlashPro Staff.",
       interests: "Every story under this name is fact-checked, edited, and held to the same high standards as all our reporting.",
-      initials: "NF"
+      initials: "NF",
+      slug:"/staff"
     }
   ];
 
@@ -98,11 +105,11 @@ const TeamPage = () => {
                       {member.interests}
                     </p>
                     
-                    <div className="d-grid">
+                    <Link className="d-grid" href={member.slug}>
                       <button className="btn btn-outline-primary btn-sm">
                         Read Full Bio
                       </button>
-                    </div>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -135,16 +142,8 @@ const TeamPage = () => {
         </div>
       </div>
 
-      <div className="py-5 mt-5 bg-light">
-        <div className="container">
-          <div className="row">
-            <div className="col-12 text-center">
-              <p className="text-muted mb-0">
-                © 2024 NewsFlashPro. Independent journalism you can trust.
-              </p>
-            </div>
-          </div>
-        </div>
+      <div className="py-5 mt-5 ">
+
       </div>
     </>
   );

@@ -91,7 +91,7 @@ const ContactPage = () => {
                   </a>
                   
                   <div className="details-text p-3 mt-3">
-                    <small>{section.details}</small>
+                    <small>{section.details}</small>  
                   </div>
                 </div>
               </div>
